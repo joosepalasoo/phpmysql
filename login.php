@@ -8,19 +8,38 @@
   </head>
   <body>
   <?php
+	//echo password_hash('admin', PASSWORD_DEFAULT);
 	session_start();
 	if (isset($_SESSION['tuvastamine'])) {
 	  header('Location: admin.php');
 	  exit();
 	  }
-	if (!empty($_POST['login']) && !empty($_POST['pass'])) {
-		$login = $_POST['login'];
-		$pass = $_POST['pass'];
-		if ($login=='admin' && $pass=='admin') {
-			$_SESSION['tuvastamine'] = 'misiganes';
+	  include("config.php");
+
+
+	  	if (!empty($_POST['login']) && !empty($_POST['pass'])) {
+			$login = $_POST['login'];
+			$pass = $_POST['pass'];
+			
+		
+
+		$paring = "SELECT * FROM users";
+	  	$saada_paring = mysqli_query($yhendus, $paring);
+	  	$rida = mysqli_fetch_assoc($saada_paring);
+	  	$s = $rida["password"];
+			//var_dump (password_verify($pass, $s ));
+
+		if ($login == 'admin' && password_verify($pass, $s )) {
+			echo "tere admin";
+			$_SESSION['tuvastamine'] = 'mida';
 			header('Location: admin.php');
+			exit();
+		}
+		else{
+			echo"vale kasutaja nimi";
 		}
 	}
+
 ?>
 <h1>Login</h1>
 <form action="" method="post">

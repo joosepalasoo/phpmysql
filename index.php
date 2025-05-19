@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <h1>HKHK spordipäev 2025!</h1>
-
+    
     <?php
 
       // MUUDA PÄRING
@@ -45,7 +45,7 @@
     ?>
 
         <!-- sisestus VORM -->
-
+      
     <form action="index.php" method="get">
       <input type="hidden" name="id" value="<?php !empty($rida['id']) ? print_r($rida['id']) : '' ?>">
       Nimi: <input type="text" name="fullname" required value="<?php !empty($rida['fullname']) ? print_r($rida['fullname']) : '' ?>"><br>
@@ -61,7 +61,7 @@
       <?php } ?>
       
     </form>
-    
+    <a href="login.php" class="btn btn-info">admin leht</a>
     <?php
 
       if(isset($_GET['msg'])){
