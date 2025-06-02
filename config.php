@@ -3,7 +3,7 @@
 
 		$db_server = 'localhost';
 		$db_andmebaas = 'sport2025';
-		$db_kasutaja = 'jalasoo';
+		$db_kasutaja = 'joosep';
 		$db_salasona = 'Passw0rd';
 
 		

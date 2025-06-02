@@ -27,7 +27,7 @@
 	  	$saada_paring = mysqli_query($yhendus, $paring);
 	  	$rida = mysqli_fetch_assoc($saada_paring);
 	  	$s = $rida["password"];
-			//var_dump (password_verify($pass, $s ));
+			var_dump (password_verify($pass, $s ));
 
 		if ($login == 'admin' && password_verify($pass, $s )) {
 			echo "tere admin";
