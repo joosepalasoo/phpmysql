@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 <style>
    .btn-color{
-  background-color: #0e1c36;
+  background-color:rgb(12, 90, 235);
   color: #fff;
   
 }
@@ -21,7 +21,7 @@
 
 
 .cardbody-color{
-  background-color: #ebf2fa;
+  background-color:rgb(15, 150, 49);
 }
 
 a{
@@ -68,7 +68,7 @@ a{
 	}
 
 ?>
-        <h2 class="text-center text-dark mt-5">Login sisse</h2>
+        <h2 class="text-center text-dark mt-5">Login Leht</h2>
         <div class="card my-5">
           <form class="card-body cardbody-color p-lg-5" method="post">
             <div class="mb-3">
