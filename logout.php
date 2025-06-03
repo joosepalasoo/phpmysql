@@ -8,16 +8,16 @@
   </head>
   <body>
 <?php
-session_start();
-if (!isset($_SESSION['tuvastamine'])) {
-	header('Location: login.php');
-	exit();
-}
-if(isset($_POST['logout'])){
-	session_destroy();
-	header('Location: admin.php');
-	exit();
-}
+    session_start();
+    if (!isset($_SESSION['tuvastamine'])) {
+        header('Location: login.php');
+        exit();
+    }
+    if(isset($_GET['logout'])){
+        session_destroy();
+        header('Location: login.php');
+        exit();
+    }
 ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
   </body>
