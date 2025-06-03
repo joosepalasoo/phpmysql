@@ -125,7 +125,7 @@
         $category = $_GET["category"];
 
         $lisa_paring = "INSERT INTO sport2025 (fullname,email,age,gender,category) 
-        VALUES ('".$fullname."','".$email."', '".$age."', ' ".$gender."', '".$category."')";
+        VALUES ('".$fullname."','".$email."', '".$age."', '".$gender."', '".$category."')";
 
         $saada_paring = mysqli_query($yhendus, $lisa_paring);
         $tulemus = mysqli_affected_rows($yhendus);
@@ -133,7 +133,7 @@
           echo "Kirje edukalt lisatud";
         } else {
           echo "Kirjet ei lisatud";
-        }
+        } 
       }
 
 
