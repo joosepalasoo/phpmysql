@@ -75,7 +75,6 @@
 
       }
     ?>
-
         <!-- sisestus VORM -->
       
     <form action="index.php" method="get">
@@ -100,7 +99,7 @@
         echo "<div class='alert alert-success'>".$_GET['msg']."</div>";
       }
 
-      // KUSTUTAMINE
+      // KUSTUTAMINE//
 
       if(isset($_GET['kustuta']) && isset($_GET['id'])){
         $id = $_GET['id'];
