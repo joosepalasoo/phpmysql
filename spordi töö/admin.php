@@ -48,7 +48,7 @@
 
 
     ?>
-    <form action="index.php" method="get">
+    <form action="admin.php" method="get">
       <input type="hidden" name="id" value="<?php !empty($rida['id']) ? print_r($rida['id']) : '' ?>"><br>
       Nimi: <input type="text" name="fullname" required 
       value="<?php !empty($rida['fullname']) ? print_r($rida['fullname']) : '' ?>" ><br>
