@@ -136,6 +136,52 @@ $result = $yhendus->query($sql);
         </tbody>
     </table>
 
+    <?php
+// Uue ruumi lisamine
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ruum_lisa'])) {
+    $ruumi_nr = $_POST['ruumi_nr'] ?? '';
+    $kirjeldus = $_POST['kirjeldus'] ?? '';
+    $olek = $_POST['olek'] ?? 'vaba';
+
+    if (!empty($ruumi_nr) && !empty($olek)) {
+        $stmt = $yhendus->prepare("INSERT INTO ruumid (ruumi_nr, kirjeldus, olek) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $ruumi_nr, $kirjeldus, $olek);
+        $stmt->execute();
+        $stmt->close();
+        header("Location: admin.php");
+        exit;
+    }
+}
+?>
+<hr class="my-5">
+
+<h3>Lisa uus ruum</h3>
+<form method="post" class="row g-3">
+    <input type="hidden" name="ruum_lisa" value="1">
+
+    <div class="col-md-4">
+        <label for="ruumi_nr" class="form-label">Ruumi number</label>
+        <input type="text" class="form-control" name="ruumi_nr" id="ruumi_nr" required>
+    </div>
+
+    <div class="col-md-4">
+        <label for="kirjeldus" class="form-label">Kirjeldus</label>
+        <input type="text" class="form-control" name="kirjeldus" id="kirjeldus">
+    </div>
+
+    <div class="col-md-4">
+        <label for="olek" class="form-label">Olek</label>
+        <select class="form-select" name="olek" id="olek">
+            <option value="vaba">Vaba</option>
+            <option value="broneeritud">Broneeritud</option>
+            <option value="hoolduses">Hoolduses</option>
+        </select>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Lisa ruum</button>
+    </div>
+</form>
     <a href="logout.php" class="btn btn-secondary mt-3">Logi välja</a>
 </div>
 </body>
