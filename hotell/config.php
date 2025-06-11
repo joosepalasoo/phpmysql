@@ -3,7 +3,7 @@ try {
     $db_server = 'localhost';
     $db_andmebaas = 'jalasoo';
     $db_kasutaja = 'jalasoo';        // muuda vastavalt oma kasutajanimele
-    $db_salasona = 'Passw0rd';            // muuda vastavalt oma salasõnale
+    $db_salasona = 'vlOMSPI7WOruJnDZ';            // muuda vastavalt oma salasõnale
 
     $yhendus = mysqli_connect($db_server, $db_kasutaja, $db_salasona, $db_andmebaas);
 
